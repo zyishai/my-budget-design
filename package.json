@@ -1,0 +1,15 @@
+{
+  "name": "budget-my",
+  "version": "1.0.0",
+  "description": "",
+  "main": "windi.config.js",
+  "scripts": {
+    "build:css": "windicss '*.html' -to windi.css --dev --config windi.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "windicss": "^3.2.0"
+  }
+}
