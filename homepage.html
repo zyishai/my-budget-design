@@ -4,10 +4,214 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Budget</title>
+    <title>Money Garden</title>
     <link rel="stylesheet" href="windi.css" />
   </head>
-  <body class="p-12">
-    <span>test</span>
+  <body class="flex flex-col h-screen">
+    <!-- Header -->
+    <header class="container px-4 mt-8 flex items-center justify-between">
+      <a href="index.html">
+        <img src="./images/Logo-with-text.png" alt="" class="h-14" />
+      </a>
+    </header>
+
+    <section class="container py-5 mt-5">
+      <!-- Image -->
+      <div class="px-4">
+        <img
+          src="./images/no-data-bg.png"
+          alt=""
+          class="opacity-50 w-full max-h-44"
+        />
+      </div>
+
+      <!-- Text Content -->
+      <div class="p-4">
+        <h1 class="text-4xl text-gray-400 font-bold text-center mb-3">
+          תכף יבוא אביב..
+        </h1>
+        <p class="text-lg text-gray-400 text-center">
+          כאן יופיעו פעולות אחרונות בחשבון כמו גם סטטיסטיקות כלליות.
+          <br />
+          ע״מ להתחיל, בחר מהאפשרויות להלן:
+        </p>
+      </div>
+
+      <!-- Actions -->
+      <!-- <div class="grid grid-cols-[min-content] justify-center gap-y-5"> -->
+      <div class="flex justify-center gap-x-5 gap-y-5 flex-wrap">
+        <a
+          href="expenses.html"
+          class="
+            group
+            block
+            flex
+            justify-between
+            items-center
+            space-x-4 space-x-reverse
+            bg-budget-green
+            px-6
+            py-2
+            rounded-md
+            shadow-sm
+          "
+        >
+          <div class="flex items-center space-x-2 space-x-reverse">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-credit-card h-5"
+            >
+              <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+              <line x1="1" y1="10" x2="23" y2="10"></line>
+            </svg>
+            <span class="font-medium mb-0.5">הוצאות</span>
+          </div>
+
+          <!-- <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="
+              feather feather-arrow-left
+              inline-block
+              h-5
+              transform
+              group-hover:-translate-x-1
+              transition
+              duration-200
+            "
+          >
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg> -->
+        </a>
+        <a
+          href="#"
+          class="
+            group
+            block
+            flex
+            justify-between
+            items-center
+            space-x-4 space-x-reverse
+            bg-budget-green
+            px-6
+            py-2
+            rounded-md
+            shadow-sm
+          "
+        >
+          <div class="flex items-center space-x-2 space-x-reverse">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-dollar-sign h-5"
+            >
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path
+                d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+              ></path>
+            </svg>
+            <span class="font-medium mb-0.5">הכנסות</span>
+          </div>
+
+          <!-- <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="
+              feather feather-arrow-left
+              inline-block
+              h-5
+              transform
+              group-hover:-translate-x-1
+              transition
+              duration-200
+            "
+          >
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg> -->
+        </a>
+        <a
+          href="#"
+          class="
+            group
+            block
+            flex
+            justify-between
+            items-center
+            space-x-4 space-x-reverse
+            bg-budget-green
+            px-6
+            py-2
+            rounded-md
+            shadow-sm
+          "
+        >
+          <div class="flex items-center space-x-2 space-x-reverse">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-pie-chart h-5"
+            >
+              <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+              <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+            </svg>
+            <span class="font-medium mb-0.5">סטטיסטיקות</span>
+          </div>
+
+          <!-- <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="
+              feather feather-arrow-left
+              inline-block
+              h-5
+              transform
+              group-hover:-translate-x-1
+              transition
+              duration-200
+            "
+          >
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg> -->
+        </a>
+      </div>
+    </section>
   </body>
 </html>
