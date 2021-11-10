@@ -6,6 +6,7 @@ module.exports = defineConfig({
     extend: {
       colors: {
         'budget-green': '#7DD543',
+        'budget-dark-green': '#10B981',
         'budget-orange': '#F8C951',
         'budget-gray': '#a6a6a6',
       },

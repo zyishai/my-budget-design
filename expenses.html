@@ -6,104 +6,299 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="windi.css" />
+    <style>
+      #menu-btn.active div:nth-child(1) {
+        width: 50%;
+        transform: rotate(-45deg) translateY(-50%);
+        top: 2px;
+        right: 1px;
+      }
+      #menu-btn.active div:nth-child(2) {
+        transform: translateY(-50%) rotate(45deg);
+        width: 100%;
+      }
+      #menu-btn.active div:nth-child(3) {
+        width: 50%;
+        transform: rotate(-45deg) translate(5%, -10%);
+        right: calc(50% - 1px);
+        bottom: 1px;
+      }
+      #drawer.active {
+        transform: translateX(0px);
+      }
+      #overlay.active {
+        opacity: 100%;
+        pointer-events: initial;
+      }
+    </style>
   </head>
-  <body>
-    <header
-      class="
-        container
-        flex
-        justify-between
-        items-center
-        py-2
-        border-b border-solid border-gray-300
-      "
-    >
-      <!-- Menu -->
-      <div class="relative w-5 h-3">
-        <div
-          class="absolute top-0 right-0 w-4/5 h-0.5 bg-black rounded-full"
-        ></div>
-        <div
-          class="
-            absolute
-            top-1/2
-            right-0
-            transform
-            -translate-y-1/2
-            w-full
-            h-0.5
-            bg-black
-            rounded-full
-          "
-        ></div>
-        <div
-          class="absolute bottom-0 right-0 w-2/5 h-0.5 bg-black rounded-full"
-        ></div>
+  <body class="flex flex-col h-screen overflow-hidden">
+    <header class="py-2 border-b border-solid border-gray-300">
+      <div class="container flex justify-between items-center">
+        <!-- Menu -->
+        <div id="menu-btn" class="relative w-5 h-3">
+          <div
+            class="
+              absolute
+              top-0
+              right-0
+              w-4/5
+              h-0.5
+              bg-black
+              rounded-full
+              transform
+              transition
+            "
+          ></div>
+          <div
+            class="
+              absolute
+              top-1/2
+              right-0
+              transform
+              -translate-y-1/2
+              w-full
+              h-0.5
+              bg-black
+              rounded-full
+              transition
+            "
+          ></div>
+          <div
+            class="
+              absolute
+              bottom-0
+              right-0
+              w-2/5
+              h-0.5
+              bg-black
+              rounded-full
+              transform
+              transition
+            "
+          ></div>
+        </div>
+
+        <!-- Year & Month Selectors -->
+        <div>
+          <!-- Month Selector -->
+          <select
+            class="
+              appearance-none
+              border-b-2 border-gray-700 border-dotted
+              text-center
+              font-medium
+            "
+          >
+            <option value="jan">ינואר</option>
+            <option value="feb">פברואר</option>
+            <option value="mar">מרץ</option>
+          </select>
+
+          <!-- Year Selector -->
+          <select
+            class="
+              appearance-none
+              border-b-2 border-gray-700 border-dotted
+              text-center
+              font-medium
+            "
+          >
+            <option value="2021">2021</option>
+            <option value="2020">2020</option>
+            <option value="2019">2019</option>
+          </select>
+        </div>
+
+        <!-- Logo -->
+        <a href="homepage.html" class="">
+          <img src="./images/Logo.png" alt="" class="h-7" />
+        </a>
       </div>
-
-      <!-- Year & Month Selectors -->
-      <div>
-        <!-- Month Selector -->
-        <select
-          class="
-            appearance-none
-            border-b-2 border-gray-700 border-dotted
-            text-center
-            font-medium
-          "
-        >
-          <option value="jan">ינואר</option>
-          <option value="feb">פברואר</option>
-          <option value="mar">מרץ</option>
-        </select>
-
-        <!-- Year Selector -->
-        <select
-          class="
-            appearance-none
-            border-b-2 border-gray-700 border-dotted
-            text-center
-            font-medium
-          "
-        >
-          <option value="2021">2021</option>
-          <option value="2020">2020</option>
-          <option value="2019">2019</option>
-        </select>
-      </div>
-
-      <!-- Logo -->
-      <a href="homepage.html" class="">
-        <img src="./images/Logo.png" alt="" class="h-7" />
-      </a>
     </header>
 
-    <section class="container pt-5">
-      <div class="flex justify-between items-start">
-        <div class="flex items-center">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-credit-card h-5"
-          >
-            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-            <line x1="1" y1="10" x2="23" y2="10"></line>
-          </svg>
-          <h1 class="text-xl font-bold leading-tight mr-2">אוכל</h1>
+    <section class="flex-1 relative container pt-3 override-y-auto">
+      <header class="py-2 mb-3">
+        <div class="flex justify-between items-start">
+          <div class="flex items-end">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-credit-card h-6"
+            >
+              <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+              <line x1="1" y1="10" x2="23" y2="10"></line>
+            </svg>
+            <h1 class="text-3xl font-bold text-gray-700 leading-none mr-2">
+              אוכל
+            </h1>
+          </div>
+          <span class="text-gray-400 text-xs font-semibold">
+            נכון לתאריך 5 נוב׳ 2021
+          </span>
         </div>
-        <span class="text-gray-400 text-xs font-semibold"
-          >נכון לתאריך 5 נוב׳ 2021</span
-        >
+        <p class="text-gray-600 mt-2">
+          <span>סה״כ הוצאות החודש:</span>
+          <span class="font-bold">257 ₪</span>
+        </p>
+      </header>
+
+      <div class="flex flex-col divide-y">
+        <article class="flex justify-between items-start py-3 cursor-pointer">
+          <div>
+            <h3 class="text-gray-600">בגדים מTerminal X</h3>
+            <small class="text-xs text-gray-400">חולצות וכובע</small>
+          </div>
+          <span class="text-lg font-medium text-gray-600">₪383</span>
+        </article>
+        <article class="flex justify-between items-start py-3 cursor-pointer">
+          <div>
+            <h3 class="text-gray-600">נעלי Nike</h3>
+          </div>
+          <span class="text-lg font-medium text-gray-600">₪499</span>
+        </article>
+        <article class="flex justify-between items-start py-3 cursor-pointer">
+          <div>
+            <h3 class="text-gray-600">קוסמטיקה</h3>
+            <small class="text-xs text-gray-400">לק ג׳ק</small>
+          </div>
+          <span class="text-lg font-medium text-gray-600">₪140</span>
+        </article>
+        <article class="flex justify-between items-start py-3 cursor-pointer">
+          <div>
+            <h3 class="text-gray-600">איפור</h3>
+          </div>
+          <span class="text-lg font-medium text-gray-600">₪55</span>
+        </article>
       </div>
-      <p class="text-sm text-gray-800 mt-1">
-        <span>סה״כ הוצאות החודש:</span>
-        <span class="font-bold">257 ₪</span>
-      </p>
+
+      <!-- Side Drawer -->
+      <div
+        id="overlay"
+        class="
+          absolute
+          top-0
+          left-0
+          h-full
+          w-full
+          bg-dark-500/30
+          pointer-events-none
+          opacity-0
+          transition
+          z-40
+        "
+      >
+        <div
+          id="drawer"
+          class="
+            absolute
+            top-0
+            right-0
+            h-full
+            w-4/5
+            bg-white
+            border-l border-gray-100
+            shadow shadow-lg shadow-dark-50
+            transform
+            translate-x-full
+            transition
+            duration-300
+            z-50
+          "
+        ></div>
+      </div>
     </section>
+
+    <!-- Category Chips -->
+    <!-- <section class="flex space-x-2 space-x-reverse py-3 px-4 overflow-x-auto">
+      <article
+        class="
+          px-4
+          py-2
+          bg-budget-dark-green
+          border border-budget-dark-green
+          rounded-full
+          cursor-pointer
+        "
+      >
+        <span class="text-white whitespace-nowrap">אוכל</span>
+      </article>
+
+      <article
+        class="px-4 py-2 border border-gray-300 rounded-full cursor-pointer"
+      >
+        <span class="text-gray-900 whitespace-nowrap">שופינג</span>
+      </article>
+
+      <article
+        class="px-4 py-2 border border-gray-300 rounded-full cursor-pointer"
+      >
+        <span class="text-gray-900 whitespace-nowrap">חשמל וארנונה</span>
+      </article>
+
+      <article
+        class="px-4 py-2 border border-gray-300 rounded-full cursor-pointer"
+      >
+        <span class="text-gray-900 whitespace-nowrap">בתי קפה</span>
+      </article>
+
+      <article
+        class="px-4 py-2 border border-gray-300 rounded-full cursor-pointer"
+      >
+        <span class="text-gray-900 whitespace-nowrap">פלאפון</span>
+      </article>
+    </section> -->
+
+    <script>
+      const menuBtn = document.querySelector('#menu-btn');
+      const overlay = document.querySelector('#overlay');
+      const drawer = document.querySelector('#drawer');
+      let menuOpen = false;
+
+      function openMenu() {
+        // transform hamburger icon
+        menuBtn.classList.add('active');
+
+        // open side drawer
+        overlay.classList.add('active');
+        drawer.classList.add('active');
+      }
+
+      function closeMenu() {
+        // transform hamburger icon back
+        menuBtn.classList.remove('active');
+
+        // close side drawer
+        drawer.classList.remove('active');
+
+        setTimeout(() => {
+          overlay.classList.remove('active');
+        }, 250);
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        menuBtn.addEventListener('click', () => {
+          // toggle state
+          menuOpen = !menuOpen;
+
+          // toggle menu class
+          if (menuOpen) {
+            openMenu();
+          } else {
+            closeMenu();
+          }
+        });
+        overlay.addEventListener('click', () => {
+          menuOpen = false;
+
+          closeMenu();
+        });
+      });
+    </script>
   </body>
 </html>

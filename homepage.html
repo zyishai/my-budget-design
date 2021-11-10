@@ -4,59 +4,114 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Money Garden</title>
+    <title>גן הכסף | בית</title>
     <link rel="stylesheet" href="windi.css" />
   </head>
-  <body class="flex flex-col h-screen">
-    <!-- Header -->
-    <header class="container px-4 mt-8 flex items-center justify-between">
-      <a href="index.html">
-        <img src="./images/Logo-with-text.png" alt="" class="h-14" />
-      </a>
+  <body class="flex flex-col h-screen overflow-y-hidden">
+    <header class="py-2 border-b border-solid border-gray-300">
+      <div class="container flex justify-between items-center">
+        <!-- Menu -->
+        <div class="relative w-5 h-3">
+          <div
+            class="absolute top-0 right-0 w-4/5 h-0.5 bg-black rounded-full"
+          ></div>
+          <div
+            class="
+              absolute
+              top-1/2
+              right-0
+              transform
+              -translate-y-1/2
+              w-full
+              h-0.5
+              bg-black
+              rounded-full
+            "
+          ></div>
+          <div
+            class="absolute bottom-0 right-0 w-2/5 h-0.5 bg-black rounded-full"
+          ></div>
+        </div>
+
+        <!-- Logo -->
+        <a href="homepage.html" class="">
+          <img src="./images/Logo.png" alt="" class="h-7" />
+        </a>
+      </div>
     </header>
 
-    <section class="container py-5 mt-5">
-      <!-- Image -->
-      <div class="px-4">
-        <img
-          src="./images/no-data-bg.png"
-          alt=""
-          class="opacity-50 w-full max-h-44"
-        />
-      </div>
+    <div class="flex-1 container my-4 overflow-y-auto">
+      <h1 class="text-3xl font-bold text-budget-green">שלום גל,</h1>
 
-      <!-- Text Content -->
-      <div class="p-4">
-        <h1 class="text-4xl text-gray-400 font-bold text-center mb-3">
-          תכף יבוא אביב..
-        </h1>
-        <p class="text-lg text-gray-400 text-center">
-          כאן יופיעו פעולות אחרונות בחשבון כמו גם סטטיסטיקות כלליות.
-          <br />
-          ע״מ להתחיל, בחר מהאפשרויות להלן:
-        </p>
-      </div>
-
-      <!-- Actions -->
-      <!-- <div class="grid grid-cols-[min-content] justify-center gap-y-5"> -->
-      <div class="flex justify-center gap-x-5 gap-y-5 flex-wrap">
-        <a
-          href="expenses.html"
+      <!-- Stats -->
+      <section
+        id="stats"
+        class="flex space-x-3 space-x-reverse mt-4 pb-4 overflow-x-auto"
+      >
+        <article
           class="
-            group
-            block
-            flex
-            justify-between
+            flex flex-col
             items-center
-            space-x-4 space-x-reverse
-            bg-budget-green
-            px-6
-            py-2
-            rounded-md
+            border border-gray-300
+            p-4
+            rounded-lg
             shadow-sm
           "
         >
-          <div class="flex items-center space-x-2 space-x-reverse">
+          <h2 class="text-2xl font-semibold whitespace-nowrap text-gray-800">
+            3012 <small class="text-xs">₪</small>
+          </h2>
+          <span class="text-gray-600 whitespace-nowrap">יתרה עדכנית</span>
+        </article>
+
+        <article
+          class="
+            flex flex-col
+            items-center
+            border border-gray-300
+            p-4
+            rounded-lg
+            shadow-sm
+          "
+        >
+          <h2 class="text-2xl font-semibold whitespace-nowrap text-gray-800">
+            803 <small class="text-xs">₪</small>
+          </h2>
+          <span class="text-gray-600 whitespace-nowrap">חסכון חודשי</span>
+        </article>
+
+        <!-- <article
+          class="
+            flex flex-col
+            items-center
+            border border-gray-300
+            p-4
+            rounded-lg
+            shadow-sm
+          "
+        >
+          <h2 class="text-2xl font-semibold whitespace-nowrap text-gray-800">
+            80030 <small class="text-xs">₪</small>
+          </h2>
+          <span class="text-gray-600 whitespace-nowrap">חסכון חודשי</span>
+        </article> -->
+      </section>
+
+      <!-- Expenses -->
+      <section id="expenses" class="mt-4">
+        <header
+          class="
+            flex
+            justify-between
+            items-end
+            py-2
+            mb-3
+            border-b border-budget-gray
+          "
+        >
+          <h2 class="text-xl font-bold text-gray-700">הוצאות אחרונות</h2>
+          <a href="expenses.html" class="text-budget-dark-green flex items-end">
+            <span class="text-sm font-semibold">לכל ההוצאות</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -65,153 +120,78 @@
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="feather feather-credit-card h-5"
+              class="feather feather-chevron-left h-4"
             >
-              <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-              <line x1="1" y1="10" x2="23" y2="10"></line>
+              <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
-            <span class="font-medium mb-0.5">הוצאות</span>
-          </div>
+          </a>
+        </header>
 
-          <!-- <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="
-              feather feather-arrow-left
-              inline-block
-              h-5
-              transform
-              group-hover:-translate-x-1
-              transition
-              duration-200
-            "
-          >
-            <line x1="19" y1="12" x2="5" y2="12"></line>
-            <polyline points="12 19 5 12 12 5"></polyline>
-          </svg> -->
-        </a>
-        <a
-          href="#"
+        <div class="contents">
+          <article class="flex justify-between items-start py-3">
+            <div>
+              <h3 class="text-gray-600">בגדים מTerminal X</h3>
+              <small class="text-xs text-gray-400">עודכן 14:35 10.11.21 </small>
+            </div>
+            <span class="text-lg font-medium text-gray-600">₪383</span>
+          </article>
+          <article class="flex justify-between items-start py-3">
+            <div>
+              <h3 class="text-gray-600">נעלי Nike</h3>
+              <small class="text-xs text-gray-400">עודכן 18:52 2.11.21 </small>
+            </div>
+            <span class="text-lg font-medium text-gray-600">₪499</span>
+          </article>
+        </div>
+      </section>
+
+      <!-- Income -->
+      <section id="income" class="mt-4">
+        <header
           class="
-            group
-            block
             flex
             justify-between
-            items-center
-            space-x-4 space-x-reverse
-            bg-budget-green
-            px-6
+            items-end
             py-2
-            rounded-md
-            shadow-sm
+            mb-3
+            border-b border-budget-gray
           "
         >
-          <div class="flex items-center space-x-2 space-x-reverse">
+          <h2 class="text-xl font-bold text-gray-700">הכנסות אחרונות</h2>
+          <a href="income.html" class="text-budget-dark-green flex items-end">
+            <span class="text-sm font-semibold">לכל ההכנסות</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="feather feather-dollar-sign h-5"
+              class="feather feather-chevron-left h-4"
             >
-              <line x1="12" y1="1" x2="12" y2="23"></line>
-              <path
-                d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
-              ></path>
+              <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
-            <span class="font-medium mb-0.5">הכנסות</span>
-          </div>
+          </a>
+        </header>
 
-          <!-- <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="
-              feather feather-arrow-left
-              inline-block
-              h-5
-              transform
-              group-hover:-translate-x-1
-              transition
-              duration-200
-            "
-          >
-            <line x1="19" y1="12" x2="5" y2="12"></line>
-            <polyline points="12 19 5 12 12 5"></polyline>
-          </svg> -->
-        </a>
-        <a
-          href="#"
-          class="
-            group
-            block
-            flex
-            justify-between
-            items-center
-            space-x-4 space-x-reverse
-            bg-budget-green
-            px-6
-            py-2
-            rounded-md
-            shadow-sm
-          "
-        >
-          <div class="flex items-center space-x-2 space-x-reverse">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="feather feather-pie-chart h-5"
-            >
-              <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
-              <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
-            </svg>
-            <span class="font-medium mb-0.5">סטטיסטיקות</span>
-          </div>
-
-          <!-- <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="
-              feather feather-arrow-left
-              inline-block
-              h-5
-              transform
-              group-hover:-translate-x-1
-              transition
-              duration-200
-            "
-          >
-            <line x1="19" y1="12" x2="5" y2="12"></line>
-            <polyline points="12 19 5 12 12 5"></polyline>
-          </svg> -->
-        </a>
-      </div>
-    </section>
+        <div class="contents">
+          <article class="flex justify-between items-start py-3">
+            <div>
+              <h3 class="text-gray-600">משכורת</h3>
+              <small class="text-xs text-gray-400">עודכן 14:35 10.11.21 </small>
+            </div>
+            <span class="text-lg font-medium text-gray-600">₪5719</span>
+          </article>
+          <article class="flex justify-between items-start py-3">
+            <div>
+              <h3 class="text-gray-600">מתנת יום הולדת</h3>
+              <small class="text-xs text-gray-400">עודכן 18:52 2.11.21 </small>
+            </div>
+            <span class="text-lg font-medium text-gray-600">₪600</span>
+          </article>
+        </div>
+      </section>
+    </div>
   </body>
 </html>
